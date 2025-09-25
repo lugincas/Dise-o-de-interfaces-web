@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Luis Ginés Casanova de Utrilla</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="hojadeestilosluiscdu.css">
+</head>
+
+<body>
+	<div class="grid-layout">
+		<header> <!-- Cabecera del documento -->
+
+			<img id="imagenHeader" src="./iconos/imagenEncabezado.png" title="Escudo del Club de Fútbol de Palomares del Río" alt="Escudo del Club de Fútbol de Palomares del Río">
+			<!-- Imagen del encabezado a modo de logo de la empresa -->
+			<h1 id="titulo">El Club Palomareño</h1>
+			<img id="imagenIcono" src="./iconos/iconoLogin.png" title="Icono de login de usuarios" alt="Icono de login de usuarios"> <!-- Icono de login -->
+			<img id="imagenMenuHamburguesa" src="./iconos/iconoHamburguesa.png" title="Icono de menú de hamburguesa" alt="Icono de menú de hamburguesa"> <!-- Icono de Menú de Hamburguesa para el formato responsive -->
+		</header> <!-- Cabecera y sección de navegación -->
+		<nav>
+			<ul class="primer_nivel"> <!-- Menú de navegación con tres enlaces -->
+				<li> <a href="" tabindex="1">Club</a> <!-- Primer apartado con dos enlaces dentro del primer nivel -->
+					<ul>
+						<li><a href="https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh" title="Tienda de extensiones de chrome explicando cómo instalar y usar Wave Evaluation Tool, se abre en una pestaña nueva" aria-label="Tienda de extensiones de chrome explicando cómo instalar y usar Wave Evaluation Tool, se abre en una pestaña nueva" target="_blank" tabindex="2">Historia</a></li> <!-- Primer enlace dentro de Club -->
+						<li><a href="https://www.tawdis.net/#" title="Página de TAW, donde se puede hacer un test de accesibilidad web online, se abre en una pestaña nueva" aria-label="Página de TAW, donde se puede hacer un test de accesibilidad web online, se abre en una pestaña nueva" target="_blank" tabindex="3">Socios</a></li> <!-- Segundo enlace dentro de Club -->
+					</ul>
+				</li>
+				<li> <a href="" tabindex="4">Noticias</a> <!-- Segundo apartado con dos enlaces dentro del primer nivel -->
+					<ul>
+						<li><a href="https://diegoamorin.com/principios-usabilidad-tognazzini/" title="Página de Diego Amorín donde se explican los 19 principios de usabilidad de Tognazzini, se abre en una pestaña nueva" aria-label="Página de Diego Amorín donde se explican los 19 principios de usabilidad de Tognazzini, se abre en una pestaña nueva" target="_blank" tabindex="5">Últimas noticias</a></li> <!-- Primer enlace dentro de Noticias -->
+						<li><a href="https://es.semrush.com/blog/usabilidad-web-principios-jakob-nielsen/" title="Página de Semrush Blog donde explican los 10 principios de Jakob Nielsen, se abre en una pestaña nueva" aria-label="Página de Semrush Blog donde explican los 10 principios de Jakob Nielsen, se abre en una pestaña nueva" target="_blank" tabindex="6">Revista</a></li> <!-- Segundo enlace dentro de Noticias -->
+					</ul>
+				</li>
+				<li> <a href="" tabindex="7">Secciones</a> <!-- Tercer apartado con dos enlaces dentro del primer nivel -->
+					<ul>
+						<li><a href="https://biblioteca.ucm.es/edicionweb/6-consistencia" title="Página de la Biblioteca de la Universidad Complutense de Madrid donde explican el concepto de Consistencia en la navegación, se abre en una pestaña nueva" aria-label="Página de la Biblioteca de la Universidad Complutense de Madrid donde explican el concepto de Consistencia en la navegación, se abre en una pestaña nueva" target="_blank"tabindex="8">Atletismo</a></li> <!-- Primer enlace dentro de Secciones -->
+						<li><a href="https://sarreplec.caib.es/pluginfile.php/11062/mod_resource/content/1/DIW03_v1/ArchivosUnidad/Moodle/DIW03_Contenidos/23_persistencia.html" title="Repositorio de materiales educativos digitales gestionado por la Consejería de Educación, Universidad e Investigación S'Arreplec, se abre en una pestaña nueva" aria-label="Repositorio de materiales educativos digitales gestionado por la Consejería de Educación, Universidad e Investigación S'Arreplec, se abre en una pestaña nueva" target="_blank"tabindex="9">Natación</a></li> <!-- Segundo enlace dentro de Secciones -->
+					</ul>
+				</li>
+			</ul>
+		</nav>
+
+
+		<main> <!-- Sección con el contenido principal del documento. Incluye noticias, secciones, opiniones, formulario y ventas -->
+			<div class="contenido_noticias" id="foco_actualidad" tabindex="-1"> <!-- Zona de noticias. Mediante el atributo tabindex="-1" y su id  activamos el foco al pulsar en la zona y al pulsar su botón correspondiente en la zona lateral -->
+				<div class="titulo_zona_actualidad">
+					<h2>Actualidad</h2> <!-- Título de la zona de noticias -->
+				</div>
+				<div class="noticia_1" tabindex="17">
+					<h3> Carla Suárez, nueva seleccionadora española en la Billie Jean King Cup </h3> <!-- Título de la primera noticia -->
+					<p> <!-- Texto de la primera noticia -->
+						La extenista española Carla Suárez ha sido nombrada nueva seleccionadora nacional de tenis en la
+						Billie Jean King Cup para las temporadas 2025 y 2026, según ha hecho público la Federación
+						española
+						de Tenis, presidida por Miguel Díaz.
+						"Es un gran honor asumir la capitanía del equipo español de Billie Jean King Cup y agradezco a
+						la
+						Federación la confianza mostrada en mí para este reto [...]", ha comentado la grancanaria, que
+						debutará en el cargo el próximo mes de abril.
+						<br><br>
+						"Intentaré aportar mi experiencia profesional para sacar el máximo de nuestras jugadoras y
+						conseguir
+						que España siga siendo un ejemplo de compromiso y esfuerzo colectivo en la competición", ha
+						añadido.
+						Carla Suárez releva así en el cardo a Anabel Medina que dejó el puesto en noviembre tras las
+						finales
+						de la Billie Jean King Cup disputada en Málaga.
+					</p>
+					<div class="imagenes_noticia"> <!-- Imágenes de la primera noticia -->
+						<img id="imagen_noticia_1" src="./imagenesNoticias/imagenNoticia1.jpg"
+							title="Fotografía de Carla Suárez celebrando una victoria"
+							alt="Fotografía de Carla Suárez celebrando una victoria">
+						<img id="imagen_noticia_2" src="./imagenesNoticias/imagenNoticia2.png" title="Logo de la Kings League"
+							alt="Logo de la Kings League">
+					</div>
+					<time datetime="2025-01-09">09/01/2025</time>
+					<time datetime="21:46">21:46 horas</time> <!-- Fecha y hora de la primera noticia -->
+					<cite>El Pais</cite>
+				</div>
+				<div class="noticia_2" tabindex="18">
+					<h3> La Diputación de Sevilla moderniza la gestión deportiva en 80 municipios con una plataforma
+						digital</h3> <!-- Título de la segunda noticia -->
+					<p> <!-- Texto de la segunda noticia -->
+						La Diputación de Sevilla presenta 'Patrici@', una plataforma para “promover la riqueza cultural
+						y turística de la provincia”. Una nueva solución tecnológica destinada a transformar la gestión
+						deportiva en 80 municipios de menos de 20.000 habitantes. Este proyecto está financiado con
+						fondos europeos NextGenerationEU dentro del marco del Plan de Recuperación, Transformación y
+						Resiliencia (PNTR).
+						<br><br>
+						La iniciativa, denominada “Atención Virtual a la Ciudadanía”, incluye el suministro y la
+						implementación de una aplicación en la nube diseñada para gestionar reservas, inscripciones y
+						alquileres de espacios deportivos. La plataforma no solo permite a los ciudadanos reservar
+						instalaciones desde sus dispositivos móviles o a través de internet, sino que también integra
+						módulos avanzados para que los ayuntamientos gestionen eficientemente eventos, escuelas
+						deportivas e instalaciones.
+					</p>
+					<div class="imagenes_noticia"> <!-- Imágenes de la segunda noticia -->
+						<img id="imagen_noticia_3" src="./imagenesNoticias/imagenNoticia3.jpg"
+							title="Fotografía de un partido de balonmano de un equipo junior"
+							alt="Fotografía de un partido de balonmano de un equipo junior">
+						<img id="imagen_noticia_4" src="./imagenesNoticias/imagenNoticia4.jpg"
+							title="Niño pequeño utilizando un móvil y sus aplicaciones"
+							alt="Niño pequeño utilizando un móvil y sus aplicaciones">
+					</div>
+					<br>
+					<time datetime="2024-12-29">29/12/2024</time>
+					<time datetime="11:49">11:49 horas</time> <!-- Fecha y hora de la primera noticia -->
+					<cite>edCreativo Andalucía</cite> <!-- Autor -->
+
+				</div>
+			</div>
+
+			<div class="secciones" id="foco_secciones" tabindex="-1"> <!-- Zona de secciones. Mediante el atributo tabindex="-1" y su id activamos el foco al pulsar en la zona y al pulsar su botón correspondiente en la zona lateral -->
+				<div class="titulo_zona_secciones">
+					<h2>Secciones</h2> <!-- Título de la zona de secciones -->
+				</div>
+				<div class="seccion_1">
+					<a href="https://es.wikipedia.org/wiki/Atletismo" title="Página de Wikipedia sobre Atletismo, se abre en una pestaña nueva" aria-label="Página de Wikipedia sobre Atletismo, se abre en una pestaña nueva" target="_blank" tabindex="19"> <!-- Enlace de la primera sección, englobando el título y la imagen -->
+						<h3>Atletismo</h3> <!-- Título de la primera sección -->
+						<img class="imagen_secciones" src="./imagenesSecciones/imagenAtletismo.jpg" 
+							title="Fotografía ampliada del pie de un atleta"
+							alt="Fotografía ampliada del pie de un atleta"> <!-- Imagen de la primera sección -->
+					</a>
+				</div>
+				<div class="seccion_2">
+					<a href="https://es.wikipedia.org/wiki/Baloncesto" title="Página de Wikipedia sobre Baloncesto, se abre en una pestaña nueva" aria-label="Página de Wikipedia sobre Baloncesto, se abre en una pestaña nueva" target="_blank" tabindex="20"> <!-- Enlace de la segunda sección, englobando el título y la imagen -->
+						<h3>Baloncesto</h3> <!-- Título de la segunda sección -->
+						<img class="imagen_secciones" src="./imagenesSecciones/imagenBaloncesto.jpg"
+							title="Fotografía ampliada de un balón de Baloncesto"
+							alt="Fotografía ampliada de un balón de Baloncesto"> <!-- Imagen de la primera sección -->
+					</a>
+				</div>
+				<div class="seccion_3">
+					<a href="https://es.wikipedia.org/wiki/Voleibol" title="Página de Wikipedia sobre Voleibol, se abre en una pestaña nueva" aria-label="Página de Wikipedia sobre Voleibol, se abre en una pestaña nueva"target="_blank" tabindex="21"> <!-- Enlace de la tercera sección, englobando el título y la imagen -->
+						<h3>Voleibol</h3> <!-- Título de la tercera sección -->
+						<img class="imagen_secciones" src="./imagenesSecciones/imagenVoleibol.jpg"
+							title="Fotografía ampliada de un balón de Voleibol siendo golpeado por jugadores"
+							alt="Fotografía ampliada de un balón de Voleibol siendo golpeado por jugadores"> <!-- Imagen de la tercera sección -->
+					</a>
+				</div>
+			</div>
+
+			<div class="contenido_opiniones" id="foco_opiniones" tabindex="-1"> <!-- Zona de opiniones. Mediante el atributo tabindex="-1" y su id activamos el foco al pulsar en la zona y al pulsar su botón correspondiente en la zona lateral -->
+				<div class="titulo_zona_opiniones">
+					<h2>¡Vuestros comentarios destacados!</h2> <!-- Título de la zona de opiniones -->
+				</div>
+				<div class="opinion_1" tabindex="22">
+					<div class="avatar_alias"> <!-- Alias y avatar de la primera opinión -->
+						<img class="avatar" src="./avatares/usuaria1.png"
+							title="Dibujo de una chica joven de pelo castaño con un gorro y una camiseta de color naranja sonriendo"
+							alt="Dibujo de una mujer con un gorro y una camiseta de color naranja sonriendo">
+						<h3 class="alias">NovaLucia</h3>
+
+
+					</div>
+					<div class="comentario_fecha"> <!-- Comentario y fecha de la primera opinión -->
+						<p class="idioma">Español - 
+							<abbr>ESP</abbr>
+						</p>
+						<p class="comentario">
+							¡Qué pasada es esta! No sabía que el atletismo pudiera ser un deporte tan divertido, ¡y eso
+							que se practica en solitario! Habrá que lanzarse... ¡jajajaja!</p>
+
+						<p class="fecha">10/01/2025 | 20:05 horas</p>
+						<h4 class="seccion_comentario">Sección de: Atletismo</h4> <!-- Sección a la que alude la primera opinión -->
+					</div>
+				</div>
+				<div class="opinion_2" tabindex="23"> 
+					<div class="avatar_alias"> <!-- Alias y avatar de la segunda opinión -->
+						<img class="avatar" src="./avatares/usuaria2.png"
+							title="Dibujo de una chica joven de pelo negro con una sudadera azul riéndose"
+							alt="Dibujo de una mujer de pelo negro con una sudadera azul riéndose">
+						<h3 class="alias">EliseCates93</h3>
+					</div>
+					<div class="comentario_fecha"> <!-- Comentario y fecha de la segunda opinión -->
+						<p class="idioma">English - 
+							<abbr>ENG</abbr>
+						</p>
+						<p class="comentario" lang="en"> <!-- Añadimos el atributo lang="en" para que el lector de pantalla lea el comentario en inglés -->
+							So you're telling me... basketball is 125 years old?? I thought it was invented in the 90's
+							or something like that... hahahaha</p>
+
+						<p class="fecha">09/01/2025 | 21:46 horas</p>
+						<h4 class="seccion_comentario">Sección de: Baloncesto</h4>	<!-- Sección a la que alude la segunda opinión -->
+					</div>
+				</div>
+				<div class="opinion_3" tabindex="24">
+					<div class="avatar_alias"> <!-- Alias y avatar de la tercera opinión -->
+						<img class="avatar" src="./avatares/usuario3.png"
+							title="Dibujo de un chico joven de pelo negro con una sudadera amarilla riéndose"
+							alt="Dibujo de un chico joven de pelo negro con una sudadera amarilla riéndose">
+						<h3 class="alias">SuperLuisG</h3>
+					</div>
+					<div class="comentario_fecha"> <!-- Comentario y fecha de la tercera opinión -->
+						<p class="idioma">Español - 
+							<abbr>ESP</abbr>
+						</p>
+						<p class="comentario">
+							De este año no pasa, lo he decidido... ¡Voy a hacer las pruebas para entrar en el equipo de
+							voleibol de mi pueblo! Gracias por motivarme a seguir entrenando :D</p>
+
+						<p class="fecha">09/01/2025 | 21:46 horas, por RTVE.es</p>
+						<h4 class="seccion_comentario">Sección de: Voleibol</h4> <!-- Sección a la que alude la tercera opinión -->
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="formulario" id="foco_formulario" tabindex="-1"> <!-- Zona de formulario. Mediante el atributo tabindex="-1" y su id activamos el foco al pulsar en la zona y al pulsar su botón correspondiente en la zona lateral -->
+				<div class="titulo_zona_formulario">
+					<h2>¡Queremos saber tu opinión!</h2>
+				</div>
+				<form action="" autocomplete="on" validate> <!-- Con el atributo validate activamos la validación del formulario y con el atributo autocomplete se permite a los usuarios guardar información de contacto para futuras visitas -->
+					<fieldset>
+						<legend>Campos obligatorios</legend> <!-- Campos obligatorios -->
+						<br>
+						<label for="alias">Alias:</label> <!-- Etiqueta para el Alias -->
+						<input class="obligatorio" id="alias" name="alias" minlength="1" maxlength="12"
+							placeholder="Ejemplo: futbolera86" title="Introduzca su alias, máximo 12 caracteres"
+							tabindex="25" required> <!-- Establecemos los requisitos para validar el formulario. Al ser un campo obligatorio, además de atribuirlo a la clase "obligatorio" añadimos el atributo required --> 
+						<span class="mensaje"></span><!-- Mensaje que se muestra para los campos obligatorios, cuando es invalido se muestra y cuando es válido se oculta -->
+						<br>
+						<br>
+
+						<label for="correo">Correo Electrónico: </label> <!-- Etiqueta para el correo electrónico -->
+						<input class="obligatorio" id="correo" type="email" name="correo"
+							placeholder="ejemplo@correo.com" title="Introduzca su correo electrónico" tabindex="26"
+							required>
+						<span class="mensaje"></span>
+						<br>
+						<br>
+
+						<label for="comentario">Escribe tu comentario: </label> <!-- Etiqueta para el comentario -->
+						<br>
+						<textarea class="obligatorio" name="comentario" type="text" id="comentario" 
+							placeholder="Escribe aquí..." rows="10" title="Escribe aquí tu comentario"
+							tabindex="27" required></textarea> <!-- Campo de tipo textarea para el comentario-->
+						<span class="mensaje"></span>
+						<br>
+						<br>
+						
+						Idioma del comentario:<!-- Etiqueta para el idioma -->
+						<br>
+						<input id="ingles" type="radio" value="i" name="idioma"
+							title="Si el idioma es inglés, selecciona esta opción" required> <!-- Campo de tipo radio, enlazando cada opción con su label con los atributos for e id -->
+						<label for="ingles" tabindex="28">Inglés</label> <!-- Etiqueta para el idioma inglés -->
+						<br>
+						<input id="frances" type="radio" value="f" name="idioma"
+							title="Si el idioma es francés, selecciona esta opción" required>
+						<label for="frances" tabindex="29">Francés</label> <!-- Etiqueta para el idioma francés -->
+						<br>
+						<input id="espanol" type="radio" value="e" name="idioma"
+							title="Si el idioma es español, selecciona esta opción" required>
+						<label for="espanol" tabindex="30">Español</label> <!-- Etiqueta para el idioma español -->
+						<span class="mensaje"></span>
+						<br>
+						<br>
+
+						<label for="fechahora">Fecha y hora de tu comentario:</label> <!-- Etiqueta para la fecha y hora -->
+						<input class="obligatorio" id="fechahora" type="datetime-local" name="fechahora"
+							title="Introduce la fecha y la hora de tu comentario"
+							placeholder="Ejemplo: 12-01-2025, 13:47" tabindex="31" required> <!-- Campo de tipo datetime para la fecha y hora -->
+						<span class="mensaje"></span>
+						<br>
+
+					</fieldset>
+					<br>
+					<fieldset> 
+						<legend>Campos opcionales</legend> <!-- Campos opcionales -->
+						<br>
+						Sección a la que va dirigida tu comentario. Puedes elegir
+							más de una: <!-- Etiqueta para elegir la sección -->
+						<br>
+
+						<input id="atletismocheck" type="checkbox"name="atletismo" title="Elige atletismo"/> <!-- Campo de tipo checkbox para elegir más de una sección -->
+						<label for="atletismocheck" tabindex="32">Atletismo</label>
+						<br>
+
+						<input id="baloncestocheck" type="checkbox" name="baloncesto" title="Elige baloncesto"/>
+						<label for="baloncestocheck" tabindex="33">Baloncesto</label>
+						<br>
+
+						<input id="voleibolcheck" type="checkbox"  name="voleibol" title="Elige voleibol"/>
+						<label for="voleibolcheck" tabindex="34">Voleibol</label>
+						<br>
+
+						<br>
+
+						<label for="numero_anios">Número de años que llevas siendo socio/a del club:</label> <!-- Etiqueta para el número de años que lleva siendo alguien socio/a del club -->
+						<input id="numero_anios" type="number" name="numero_anios" placeholder="Ejemplo: 20" min="0" max="70" title="Introduzca el número de años que lleva siendo socio/a del club" tabindex="35" /> <!-- Campo de tipo number -->
+						<span class="mensaje"></span>
+						<br>
+						<br>
+					</fieldset>
+					<div class="botones"> <!-- Botones para enviar y cancelar el formulario -->
+						<button class="boton_enviar" type="submit" title="Validar el formulario" tabindex="36">Enviar</button>
+						<button class="boton_cancelar" type="reset" title="Cancelar el envío y restablecer los campos" tabindex="37">Cancelar</button>
+						<br>
+						<br>
+					</div>
+			</div>
+			<div class="venta" id="foco_ventas" tabindex="-1"> <!-- Zona de ventas. Mediante el atributo tabindex="-1" y su id activamos el foco al pulsar en la zona y al pulsar su botón correspondiente en la zona lateral -->
+				<div class="titulo_zona_ventas">
+					<h2>Los más vendidos</h2>
+				</div>
+				<div class="zona_tabla"> <!-- Tabla de ventas -->
+					<table class="tabla_ventas" tabindex="38">
+						<caption>Prendas más vendidas de nuestra tienda online, categorizadas por sexo y deporte </caption> <!-- Caption de la tabla de ventas -->
+						<colgroup> 
+							<col span="1" class="prenda">
+							<col span="2" class="atletismo">
+							<col span="2" class="baloncesto">
+							<col span="2" class="voleibol">
+						</colgroup>
+
+						<thead>
+							<tr>
+								<th>&nbsp;</th> <!-- Para la primera columna de la tabla, añadimos un espacio en blanco en su primera celda  -->
+								<th id="atletismocolumna" scope="colgroup" colspan="2">Atletismo</th> <!-- Segunda columna de la tabla, englobando dos columnas (hombre y mujer) -->
+								<th id="baloncestocolumna" scope="colgroup" colspan="2">Baloncesto</th> <!-- Tercera columna de la tabla, englobando dos columnas (hombre y mujer) -->
+								<th id="voleibolcolumna" scope="colgroup" colspan="2">Voleibol</th> <!-- Cuarta columna de la tabla, englobando dos columnas (hombre y mujer) -->
+							</tr>
+							<tr>
+								<th>&nbsp;</th> <!-- Añadimos un espacio en blanco para distribuir los elementos de la tabla -->
+								<th id="hombreatleta">Hombre</th> 
+								<th id="mujeratleta">Mujer</th>
+								<th id="hombrebaloncesto">Hombre</th>
+								<th id="mujerbaloncesto">Mujer</th>
+								<th id="hombrevoleibol">Hombre</th>
+								<th id="mujervoleibol">Mujer</th>
+							</tr>
+						</thead>
+						<tbody><!-- Mostramos el contenido de la tabla con la etiqueta tbody -->
+							<tr>
+								<th id="camisetas">Camiseta</th> <!-- Primera fila de la tabla -->
+								<td headers="atletismocolumna hombreatleta camiseta">1000</td>
+								<td headers="atletismocolumna mujeratleta camiseta">1500</td>
+								<td headers="baloncestocolumna hombrebaloncesto camiseta">1800</td>
+								<td headers="baloncestocolumna mujerbaloncesto camiseta">1500</td>
+								<td headers="voleibolcolumna hombrevoleibol camiseta">1200</td>
+								<td headers="voleibolcolumna mujervoleibol camiseta">1600</td>
+
+							</tr>
+							<tr>
+								<th id="pantalones">Pantalones</th> <!-- Segunda fila de la tabla -->
+								<td headers="atletismocolumna hombreatleta pantalon">1500</td>
+								<td headers="atletismocolumna mujeratleta pantalon">800</td>
+								<td headers="baloncestocolumna hombrebaloncesto pantalon">800</td>
+								<td headers="baloncestocolumna mujerbaloncesto pantalon">1500</td>
+								<td headers="voleibolcolumna hombrevoleibol pantalon">900</td>
+								<td headers="voleibolcolumna mujervoleibol pantalon">800</td>
+							</tr>
+							<tr>
+								<th id="zapas">Zapatillas</th> <!-- Tercera fila de la tabla -->
+								<td headers="atletismocolumna  hombreatleta zapas">300</td>
+								<td headers="atletismocolumna  mujeratleta zapas">400</td>
+								<td headers="baloncestocolumna hombrebaloncesto zapas">400</td>
+								<td headers="baloncestocolumna mujerbaloncesto zapas">300</td>
+								<td headers="voleibolcolumna hombrevoleibol zapas">100</td>
+								<td headers="voleibolcolumna mujervoleibol zapas">250</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<th id="ventas_totales">Totales</th> <!-- Cuarta fila de la tabla -->
+								<td headers="hombreatleta totales">2800</td>
+								<td headers="mujeratleta totales">2700</td>
+								<td headers="hombrebaloncesto totales">3000</td>
+								<td headers="mujerbaloncesto totales">3300</td>
+								<td headers="hombrevoleibol totales">2200</td>
+								<td headers="mujervoleibol totales">2650</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+			<div class="zonaLateral"> <!-- Zona lateral, donde se ubican los enlaces de acceso rápido y la galería de imágenes -->
+				<div class="titulo_bloque_navegacion"> 
+					<h2>Acceso rápido</h2> <!-- Título de la zona lateral -->
+				</div>
+				<ul class="bloque_navegacion"> <!-- Lista de enlaces. Estos enlaces se pueden activar con el atributo tabindex y es la primera zona a la que podemos acceder para que sea posible ir directamente al contenido deseado desde el principio haciendo uso de los enlaces-->
+					<li><a href="#foco_actualidad" tabindex="10" aria-label="Ir a la sección de actualidad">Actualidad</a></li> 
+					<li><a href="#foco_secciones" tabindex="11" aria-label="Ir a la zona de secciones">Zona de secciones</a></li>
+					<li><a href="#foco_opiniones" tabindex="12" aria-label="Ir a la zona de comentarios">¡Vuestros comentarios destacados!</a></li>
+					<li><a href="#foco_formulario" tabindex="13" aria-label="Ir a la zona del formulario de comentarios">¡Queremos saber tu opinión!</a></li>
+					<li><a href="#foco_ventas" tabindex="14" aria-label="Ir a la sección de ventas">Los más vendidos</a></li>
+					<li><a href="#foco_galeria" tabindex="15" aria-label="Ir a la sección de galeria">Galería de Imágenes</a></li>
+					<li><a href="#foco_pie_pagina" tabindex="16" aria-label="Ir al pie de página">Pie de página</a></li>
+				</ul>
+			</div>
+			<div class="galeria" id="foco_galeria" tabindex="-1"> <!-- Zona de la galería de imágenes. Mediante el atributo tabindex="-1" y su id activamos el foco al pulsar en la zona y al pulsar su botón correspondiente en la zona lateral -->
+				<div class="titulo_galeria">
+					<h2>La galería del club</h2>
+				</div>
+				<!-- Primera imagen de la galería -->
+				<div class="marco_galeria"> <!-- Marcos para separar cada imagen y su descripción -->
+					<figure>
+						<img class="imagenes_galeria" src="./imagenesGaleria/galeria1.jpg"
+						title="Fotografía de la iglesia de Palomares realizada por nuestra usuaria EliseCates93"
+						alt="Fotografía de la iglesia de Palomares realizada por nuestra usuaria EliseCates93" tabindex="39">
+					</figure> <!-- Imagen de la primera galería, descrita mediante title y alt -->
+					<figcaption class="pie_de_foto" tabindex="39">
+						Fotografía de la iglesia de Palomares realizada por nuestra usuaria EliseCates93.
+					</figcaption>
+				</div>
+				<!-- Segunda imagen de la galería -->
+				<div class="marco_galeria">
+				<figure>
+					<img class="imagenes_galeria" src="./imagenesGaleria/galeria2.jpg"
+					title="Fotografía de las jornadas de teatro con los más peques del club realizadas por nuestra usuaria NovaLucia"
+					alt="Fotografía de las jornadas de teatro con los más peques del club realizadas por nuestra usuaria NovaLucia" tabindex="40">
+				</figure>
+					<figcaption class="pie_de_foto" tabindex="41">
+						Fotografía de las jornadas de teatro con los más peques del club realizadas por nuestra usuaria NovaLucia.
+					</figcaption>
+				</div>
+				<!-- Tercera imagen de la galería -->
+				<div class="marco_galeria">
+					<figure>
+				<img class="imagenes_galeria" src="./imagenesGaleria/galeria3.jpg"
+					title="Alcalde de Palomares del Río, Manuel Benjumea, y presidente del Palomares Club de Fútbol, Pablo Casado, presentando la nueva equipación."
+					alt="Alcalde de Palomares del Río y presidente del Palomares Club de Fútbol con la nueva equipación." tabindex="42">
+				</figure>
+					<figcaption class="pie_de_foto" tabindex="43">
+						Fotografía del alcalde de Palomares del Río, Manuel Benjumea, y el presidente del Palomares Club de Fútbol, Pablo Casado, presentando las nuevas camisetas de la Liga de Palomares.
+					</figcaption>
+				</div>
+				<!-- Cuarta imagen de la galería -->
+				<div class="marco_galeria">
+				<figure>
+					<img class="imagenes_galeria" src="./imagenesGaleria/galeria4.jpg"
+					title="Cartel para anunciar el comienzo de las inscripciones al equipo de baloncesto de Palomares del Río"
+					alt="Cartel para anunciar el comienzo de las inscripciones al equipo de baloncesto de Palomares del Río"
+					aria-describedby="La imagen presenta la ilustración de un balón de baloncesto en un estadio de baloncesto bajo las palabras 'Vuelve el Baloncesto' y sobre los horarios, la ubicación y los requisitos para participar" tabindex="44">
+				</figure>
+					<figcaption class="pie_de_foto" tabindex="45">
+						Cartel para anunciar el comienzo de las inscripciones al equipo de baloncesto de Palomares del Río.
+					</figcaption>
+				</div>
+			</div>
+		</main>
+
+		<footer id="foco_pie_pagina" tabindex="-1"> <!-- Zona de pie de página. Mediante el atributo tabindex="-1" y su id activamos el foco al pulsar en la zona y al pulsar su botón correspondiente en la zona lateral -->	
+			<div class="datosEmpresa"> <!-- Sección de datos de la empresa -->
+				<h2>Contacto:</h2> <!-- Título -->
+				<p tabindex="46">Calle Manuel Trillo de Leyva, Nº52</p> <!-- Dirección -->
+				<p tabindex="47">41928 - Palomares del Río (Sevilla)</p> <!-- Localidad y provincia -->
+				<p tabindex="48">Teléfono: 955764008</p> <!-- Teléfono -->
+				<p tabindex="49">Email: palomarescf@gmail.com</p> <!-- email -->
+			</div>
+
+			<div class="redesSociales"> <!-- Redes sociales -->
+				<h2>¡Encuéntranos en Redes Sociales!</h2> <!-- Título -->
+				<a class="enlaceRrss" href="https://x.com/?lang=es" title="Página de Twitter, se abre en una pestaña nueva" aria-label="Página de Twitter, se abre en una pestaña nueva" target="_blank" tabindex="50">
+					<img class="iconosRrss" src="./iconos/iconoX.png" title="Página principal de X" alt="Logo de X"> <!-- Enlace a X -->
+				</a>
+				<a class="enlaceRrss" href="https://www.instagram.com/" title="Página de Instagram, se abre en una pestaña nueva" aria-label="Página de Instagram, se abre en una pestaña nueva" target="_blank" tabindex="51">
+					<img class="iconosRrss" src="./iconos/iconoInsta.jpg" title="Página principal de Instagram" alt="Logo de Instagram">
+					<!-- Enlace a Instagram -->
+				</a>
+				<a class="enlaceRrss" href="https://www.facebook.com/home.php" title="Página de Facebook, se abre en una pestaña nueva" aria-label="Página de Facebook, se abre en una pestaña nueva" target="_blank" tabindex="52">
+					<img class="iconosRrss" src="./iconos/iconoFacebook.png" title="Página principal de Facebook" alt="Logo de Facebook">
+					<!-- Enlace a Facebook -->
+				</a>
+			</div>
+
+			<div class="newsletter"> <!-- Newsletter -->
+				<label for="emailnovedades">¡Suscríbete a nuestra newsletter! Déjanos tu email:</label> <!-- Título -->
+				<input type="email" id="emailnovedades" placeholder="Introduce el email" title="Campo para introducir el email" tabindex="53"> <!-- Formulario -->
+				<button type="submit" title="Enviar el email para suscribirse a las newsletter" tabindex="54">Enviar</button> <!-- Botón -->
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>
