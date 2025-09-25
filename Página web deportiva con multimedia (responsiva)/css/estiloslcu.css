@@ -1,0 +1,332 @@
+/* Para los tamaños y proporciones más concretos se han utilizado píxeles y 
+unidades relativas Element (em) mientras que para las más genéricas se han utilizado porcentajes */
+
+body {
+	/* Ajustes generales para el cuerpo del documento*/
+	justify-self: center;
+	min-width: 620px;
+	max-width: 1024px;
+	background-color: rgb(177, 232, 255);
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: justify;
+}
+
+a {
+	/* Ajustes generales para enlaces */
+	font-size: 20px;
+	font-weight: bold;
+}
+
+img {
+	/* Ajustes generales para imágenes */
+	max-width: 100%;
+	height: auto;
+}
+
+
+.grid-layout {
+	/* Grid para la maquetación principal */
+	display: grid;
+	grid-template-areas: 'encabezado'
+		'main'
+		'pie';
+}
+
+
+/* Encabezado */
+header {
+	grid-area: encabezado;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	border-bottom: 5px solid rgb(76, 144, 254, .8);
+	background-image: url(../imagenes/fondoCabecera.jpg); /* Imagen de fondo de la cabecera */
+}
+
+#logotipo {
+	/* Formateo del logotipo */
+	margin: 1%;
+	background-color: rgb(255, 255, 255);
+	border-radius: 15px;
+}
+
+#iconoHamburguesa {
+	/* Desactivamos de momento el icono del menú hamburguesa */
+	display: none;
+	
+}
+
+nav {
+	margin: 5px;
+	width: 95%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: rgb(76, 144, 254, .9);
+	/* Restamos un poco de opacidad con el último valor en el color de fondo */
+	border-radius: 50px;
+}
+
+.apartadosNavegacion {
+	/* Menú de navegación*/
+	list-style-type: none;
+	display: flex;
+	border-radius: 10px;
+}
+
+.apartadosNavegacion>li>a {
+	/* Formato de los enlaces*/
+	padding: 15px 20px;
+	margin: 10px;
+	color: rgb(0, 47, 124);
+	text-decoration: none;
+	background-color: rgb(255, 205, 125);
+	border-radius: 30px;
+}
+
+.apartadosNavegacion>li>a:hover {
+	/* Efecto al pasar el ratón por encima de los enlaces */
+	color: rgb(76, 144, 254);
+	background-color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+main {
+	/* Grid para la maquetación principal, que se encarga de la disposición de la zona de contenidos y la zona lateral */
+	grid-area: main;
+	display: grid;
+	grid-template-areas: 'zona_imagenes zona_imagenes '
+		'zona_audio zona_video'; /* Disponemos de esta forma la página para que las imágenes puedan visualizarse sin problema y la zona inferior que comparten las secciones de audio y vídeo estén equilibradas y con espacio suficiente */
+	background-image: url(../imagenes/fondoContenido.jpg); /* Imagen de fondo de la zona principal. Dejamos que se repita dos veces para que coja todo el alto de la página */
+
+}
+
+.zonaImagenes { /* Formato de la sección de imágenes */
+	grid-area: zona_imagenes;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	display: grid;
+	grid-template-areas: 'titulo titulo'
+		'imagen internet '
+		'composicionCuatro responsiva';
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.2); /* Ponemos un color de fondo con poca opacidad para mejorar la visibilidad del texto */
+	border-bottom: 5px solid rgba(254, 174, 76, 0.8);
+}
+
+#tituloGaleria {
+	/* Título de la sección de imágenes */
+	grid-area: titulo;
+	margin: 2%;
+	background-color: rgb(255, 205, 125);
+	border-radius: 10px;
+	padding: 10px;
+	color: rgb(0, 47, 124);
+}
+
+.imagenImagen {
+	grid-area: imagen;
+}
+
+.imagenInternet {
+	grid-area: internet;
+}
+
+.imagenComposicionCuatro {
+	grid-area: composicionCuatro;
+}
+
+.imagenResponsiva {
+	grid-area: responsiva;
+}
+
+#tituloAudio,
+#tituloVideo {
+	/* Título de las secciones audio y video, con colores distintos para diferenciarse de la zona de imágenes */
+	background-color: rgb(76, 144, 254);
+	color: rgb(255, 255, 255);
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.zonaAudio {
+	/* Sección del audio */
+	grid-area: zona_audio;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(254, 186, 77, 0.5); /* Ponemos un color de fondo con poca opacidad para mejorar la visibilidad del texto y del resto de elementos */
+
+}
+
+.audioBoxinglov {
+	/* Formato de la caja de audio */
+	border: 10px solid rgb(76, 144, 254);
+	border-radius: 50px;
+}
+
+.zonaVideo {
+	/* Sección del vídeo */
+	grid-area: zona_video;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(254, 186, 77, 0.5); /* Ponemos un color de fondo con poca opacidad para mejorar la visibilidad del texto y del resto de elementos */
+}
+
+.bloqueBotones {
+	/* Bloque destinado a ordenar los botones del vídeo */
+	margin: 5px;
+	display: grid;
+	grid-template-areas: 'reproducir pausar duracion'
+		'subir bajar duracion ';
+}
+
+/* Formato de cada uno de los botones */
+#botonReproducir {
+	grid-area: reproducir;
+	color: rgb(0, 0, 0);
+	background-color: rgb(28, 253, 69);
+	border: 3px solid rgb(0, 74, 34);
+}
+
+#botonPausar {
+	grid-area: pausar;
+	color: rgb(255, 255, 255);
+	background-color: rgb(253, 28, 28);
+	border: 3px solid rgb(74, 0, 0);
+}
+
+#botonDuracion {
+	grid-area: duracion;
+	color: rgb(0, 0, 0);
+	background-color: rgb(28, 159, 253);
+	border: 3px solid rgb(0, 48, 74);
+}
+
+#botonSubirVolumen {
+	grid-area: subir;
+	color: rgb(0, 0, 0);
+	background-color: rgb(253, 156, 28);
+	border: 3px solid rgb(74, 37, 0);
+}
+
+#botonBajarVolumen {
+	grid-area: bajar;
+	color: rgb(0, 0, 0);
+	background-color: rgb(253, 156, 28);
+	border: 3px solid rgb(74, 37, 0);
+}
+
+/* Medidas y espacio de los botones */
+#botonReproducir,
+#botonPausar,
+#botonDuracion,
+#botonSubirVolumen,
+#botonBajarVolumen {
+	margin: 2px;
+	font-size: 15px;
+	border-radius: 5px;
+}
+
+/* Interacción de los botones al pasar el ratón por encima */
+#botonReproducir:hover,
+#botonPausar:hover,
+#botonDuracion:hover,
+#botonSubirVolumen:hover,
+#botonBajarVolumen:hover {
+
+	color: rgb(0, 47, 124);
+	background-color: rgb(195, 217, 254);
+	border: 3px solid rgb(255, 255, 255);
+
+}
+
+footer {
+	/* Maquetación y estilo del pie de página */
+	grid-area: pie;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	padding: 5px;
+	text-align: center;
+	color: rgb(0, 47, 124);
+	background: linear-gradient(to right, rgb(254, 186, 77) 50%, rgb(76, 144, 254) 50%); /* Utilizamos un gradiente hacia la derecha y al 50% en ambos casos para tener dos colores a la vez de manera equilibrada */
+	border-top: 5px solid rgba(255, 255, 255, 0.8);
+}
+
+.tituloPiePagina {
+	font-weight: bold;
+}
+
+.imagenesPiePagina,
+.audioPiePagina,
+.videoPiePagina {
+	/* Estilo de las secciones */
+	width: 32.5%;
+	flex-direction: column;
+	background-color: rgb(221, 234, 255, 0.5);
+	/* Añado un fondo blanco con un poco de opacidad para que pueda leerse bien el texto */
+	border: 2px solid rgb(10, 39, 255);
+}
+
+@media screen and (max-width:620px) { /* Estilos para móviles y tablets (dispositivos menores de 620px).*/
+
+	body {
+		/* Ajustes generales para el cuerpo del documento*/
+		width: auto;
+		margin: 0px;
+	}
+
+	header {
+		flex-direction: row; /* Disposición del logo y del icono de menú desplegable en horizontal */
+	}
+
+	nav { /* Desactivamos la zona de navegación */
+		display: none;
+	}
+
+	#iconoHamburguesa { /* Activamos el icono del menú desplegable */
+		display: flex;
+		background-color: rgba(255, 255, 255);
+		border-radius: 10px;
+	}
+
+	main {
+		/* Grid para la maquetación principal, cambiando la disposición */
+		display: grid;
+		grid-template-areas: 'zona_imagenes'
+			'zona_audio'
+			'zona_video';
+		background-image: url(../imagenes/fondoContenido.jpg);
+
+	}
+
+	.zonaImagenes { 
+		/* Grid para la sección de las imágenes, cambiando la disposición */
+		grid-template-areas: 'titulo'
+			'imagen'
+			'internet'
+			'composicionCuatro '
+			'responsiva';
+	}
+
+	footer {
+		/* Cambiamos también la disposición de los elementos del footer */
+		flex-direction: column;
+	}
+
+	.imagenesPiePagina,
+	.audioPiePagina,
+	.videoPiePagina {
+		/* Estilo del footer, con más ancho (controlado) para que ocupe un espacio similar al de la versión escritorio */
+		width: 98%;
+	}
+
+}
