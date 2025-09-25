@@ -1,0 +1,183 @@
+/* CSS base - Luis Ginés Casanova de Utrilla */
+
+body {
+    /* Ajustes generales para el cuerpo del documento*/
+    justify-self: center;
+    min-width: 620px;
+    max-width: 1024px;
+    background-color: rgb(216, 243, 254);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+img {
+    /* Ajustes generales para imágenes */
+    max-width: 100%;
+    height: auto;
+    border-top-left-radius: 7px; /* Un poco menos redondeado que el header para que no hayan espacios en blanco */
+    border-bottom-left-radius: 7px;
+}
+
+.maqueta {
+    /* Grid para la maquetación principal */
+    display: grid;
+    grid-template-areas: 'encabezado encabezado'
+        'navegacion navegacion'
+        'transformaciones transiciones'
+        'animaciones_css animaciones_canvas'
+        'animaciones_svg animaciones_svg'
+        'pie pie';
+        grid-template-columns: 50% 50%;    
+}
+
+/* ----------------------------------------------- */
+/* Estilo general para el encabezado */
+/* ----------------------------------------------- */
+
+header {
+    /* Estilo del encabezado */
+    grid-area: encabezado;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid rgba(11, 105, 0, 0.8);
+    border-radius: 10px;
+    background-color: rgb(142, 255, 155);
+}
+
+#tituloNombre {
+    margin-left: 20%; /* Separamos un poco el nombre en el encabezado por la izquierda, para que quede más centrado*/
+}
+
+/* ----------------------------------------------- */
+/* Estilo general para la zona de navegación */
+/* ----------------------------------------------- */
+
+nav {
+    /* Estilo de la zona de navegación y distribución de los enlaces*/
+    grid-area: navegacion;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.boton_navegacion {
+    /* Estilo de los enlaces en la zona de navegación */
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border: 2px solid rgba(11, 105, 0);
+    border-radius: 10px;
+    transition: all, 0.5s ease; /* Establecemos aquí el atributo transition para que después de experimentar las transiciones correspondientes, el elemento vuelva a su estado inicial */
+}
+
+.boton_navegacion:hover {
+    /* Cambios al pasar el ratón por encima del enlace de navegación */
+    background-color: rgba(73, 255, 94, 0.8);
+    border: 2px solid rgba(156, 0, 0);
+}
+
+.boton_navegacion:active {
+    /* Cambios al hacer click encima del enlace de navegación (Si se mantiene presionado, se aprecia más) */
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgba(73, 255, 94, 0.8);
+
+}
+
+#dibujo_svg{
+    /* Estilo para el marco que contiene la animación realizada con SVG */
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+/* ----------------------------------------------- */
+/* Estilo general para cada zona principal */
+/* ----------------------------------------------- */
+.transformaciones {
+    /* Estilo general para la zona de transformaciones */
+    padding: 10px;
+    grid-area: transformaciones;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    border: 2px solid rgba(11, 105, 0, 0.8);
+    background-color: rgba(192, 255, 190, 0.8);
+}
+
+.transiciones {
+    /* Estilo general para la zona de transiciones */
+    padding: 10px;
+    grid-area: transiciones;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(11, 105, 0, 0.8);
+    background-color: rgba(192, 255, 190, 0.8);
+}
+
+.animaciones_css {
+    /* Estilo general para la zona de animaciones en CSS */
+    padding: 10px;
+    grid-area: animaciones_css;
+    border: 2px solid rgba(11, 105, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(10, 169, 4, 0.8);
+}
+
+.animaciones_canvas {
+    /* Estilo general para la zona de animacion en Canvas */
+    padding: 10px;
+    grid-area: animaciones_canvas;
+    border: 2px solid rgba(11, 105, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(10, 169, 4, 0.8);
+}
+
+.animaciones_svg {
+    /* Estilo general para la zona de animación mediante la etiqueta SVG */
+    padding: 10px;
+    grid-area: animaciones_svg;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgba(11, 105, 0, 0.8);
+    background-color: rgba(192, 255, 190, 0.8);
+}
+
+.transformaciones:focus,
+.transiciones:focus,
+.animaciones_css:focus,
+.animaciones_canvas:focus,
+.animaciones_svg:focus {
+    /* Estilo que adoptan los contenedores cuando se coge el foco en la sección a la que nos redirige el usuario al hacer clic en algún elemento del bloque de navegación lateral */
+    border: 5px solid rgb(0, 55, 183);
+    opacity: 0.8;
+}
+
+/* ----------------------------------------------- */
+/* Estilo general para el footer */
+/* ----------------------------------------------- */
+
+footer {
+    /* Estilo general para la zona de pie de página */
+    grid-area: pie;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    font-weight: bold;
+    border: 2px solid rgba(11, 105, 0, 0.8);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(142, 255, 155);
+}

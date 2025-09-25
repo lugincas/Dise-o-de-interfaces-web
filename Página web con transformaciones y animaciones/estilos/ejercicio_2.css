@@ -1,0 +1,140 @@
+/* CSS para el ejercicio 2: transformaciones y transiciones - Luis Ginés Casanova de Utrilla */
+
+/* ----------------------------------------------- */
+/* Transformaciones */
+/* ----------------------------------------------- */
+
+.opciones_transformaciones{
+    /* Distribuimos botones, bola y zona de texto con grid */
+    grid-template-areas: 'escalado desplazamiento rotacion'
+    'bola'
+    'texto_transformaciones';
+    align-items: center;
+    justify-items: center;
+}
+#boton_escalado{
+    grid-area: escalado;
+}
+#boton_desplazamiento{
+    grid-area: desplazamiento;
+}
+#boton_rotacion{
+    grid-area: rotacion;
+}
+
+#contorno_bola {
+    /* Creación de la bola de billar como elemento HTML mediante CSS. Aquí establecemos las dimensiones, la distribución de sus elementos internos, el color y la forma */
+    grid-area: bola;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+#numero_bola {
+    /* Establecemos la fuente del número de la bola (se ha elegido una que recordara más aún a las bolas de billar) y un fondo blanco a la misma */
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centramos vertical y horizontalmente el número */
+    border-radius: 50%;
+}
+#texto_transformaciones{
+    /* Zona destinada al texto donde aparecerá la línea de código correspondiente a la transformación que experimenta la bola */
+    grid-area: texto_transformaciones;
+    width: 90%;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0);
+    background-color: white;
+    border-radius: 5px;
+    padding: 6px;
+}
+
+#contorno_bola{
+    /* Establecemos aquí el atributo transition para que después de experimentar las transformaciones, vuelva a su estado inicial */
+    transition: all, 1s ease-in;
+}
+
+#boton_escalado:active ~ #contorno_bola {
+    /* Escalamos la bola a 1.3 uniformemente al pulsar el botón */
+    transform: scale(1.3, 1.3);
+}
+
+#boton_desplazamiento:active ~ #contorno_bola {
+    /* Desplazamos la bola de billar a la derecha al pulsar el botón */
+    transform: translateX(200px);
+}
+
+#boton_rotacion:active ~ #contorno_bola{
+    /* Desplazamos la bola de billar a la derecha mientras rota al pulsar el botón */
+    transform: translateX(200px) rotate(360deg);
+}
+
+#boton_escalado:active ~ #texto_transformaciones::after{
+    /* Mostramos el código para escalar la bola al pulsar el botón */
+    content: "transform: scale(1.3, 1.3)";
+}
+#boton_desplazamiento:active ~ #texto_transformaciones::after{
+    /* Mostramos el código para desplazar la bola al pulsar el botón */
+    content: "transform: translateX(200px)";
+}
+#boton_rotacion:active ~ #texto_transformaciones::after{
+    /* Mostramos el código para desplazar y rotar la bola al pulsar el botón */
+    content: "transform: translateX(200px) rotate(360deg)";
+}
+
+/* ----------------------------------------------- */
+/* Transiciones */
+/* ----------------------------------------------- */
+
+.bola_transicion {
+    /* Creación de la bola de billar como elemento HTML mediante CSS, tal y como hicimos para el ejercicio anterior. Aquí establecemos las dimensiones, la distribución de sus elementos internos, el color y la forma */
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    border: 3px solid rgba(0, 0, 0); /* Añadimos un borde "oculto" al ser del mismo color que la bola, para que la transición entre este y el borde de la mesa de billar en el que se transforma sea más orgánico. Sino, parece que el de la mesa aparece y desaparece de la nada */
+    border-radius: 50%;
+    transition: all, 2s ease; /* Establecemos aquí el atributo transition para que después de experimentar las transiciones correspondientes, el elemento vuelva a su estado inicial */
+}
+
+.numero_bola_transicion {
+    /* Como hicimos en el ejercicio anterior, establecemos la fuente del número de la bola y un fondo blanco a la misma */
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centramos vertical y horizontalmente el número */
+    border-radius: 50%;
+}
+
+.bola_transicion:active {
+    /* Al pulsar la bola de billar, aplicamos la transición */
+    transform: scale(3, 1.5); /* Ensanchamos la bola mediante scale() hasta adoptar dimensiones similares a las de una mesa de billar pequeña */
+    border: 5px solid rgba(156, 0, 0); /* Cambiamos el color del borde a rojo */
+    border-radius: 10%; /* Redondeamos los bordes */
+    background-color: rgba(2, 154, 20, 0.8); /* Cambiamos el color de la bola a verde para que parezca el de la mesa */
+
+    .numero_bola_transicion {
+        /* El número de la bola "desaparece" mientras esta es una mesa de billar */
+        opacity: 0.0;
+        transition: all, 1s ease;
+    }
+
+}

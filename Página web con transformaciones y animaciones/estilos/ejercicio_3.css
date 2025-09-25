@@ -1,0 +1,247 @@
+/* CSS para el ejercicio 3: Animaciones HTML5 y CSS3 (@keyframe) - Luis Ginés Casanova de Utrilla */
+
+#tapete_juego {
+    /* Damos forma a la mesa de billar */
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 5px solid rgba(156, 0, 0);
+    border-radius: 15px;
+    background-color: rgba(12, 103, 23);
+}
+
+#titulo_jugada {
+    /* Estilo del título de la jugada */
+    color: rgba(12, 103, 23);
+    font-weight: bold;
+}
+
+.jugada {
+    /* Estilo para los elementos que están dentro de la mesa de billar y que conforman la jugada */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+#taco_billar {
+    /* Damos forma al taco, con un gradiente lineal y lo rotamos un poco con transform:rotate */
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    background: linear-gradient(to right, rgba(0, 0, 0) 0, rgba(0, 0, 0) 23%, rgba(222, 184, 135) 23%, rgba(222, 184, 135) 86%, rgba(20, 43, 218) 14%, rgba(20, 43, 218) 100%);
+    width: 20%;
+    height: 5px;
+    transform: rotate(-20deg);
+}
+
+.bola_billar_css {
+    /* Damos forma a nuestras bolas de billar, siguiendo un estilo similar al de las que hicimos para las del ejercicio 2, pero reducido */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: small;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 50%;
+}
+
+#bola_blanca {
+    /* Color blanco para la bola blanca */
+    background-color: rgba(255, 255, 255);
+}
+
+#bola_cambiacolor {
+    /* Color rojo como color inicial de nuestra bola que cambia de color */
+    background-color: rgb(217, 5, 5);
+}
+
+.boton_animacion {
+    /* Damos forma a los botones para reanudar y parar la animación */
+    border: 2px solid rgb(253, 194, 0);
+    border-radius: 10px;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.boton_animacion:hover{
+    /* Al pasar por encima de ellos, el borde se vuelve blanco */
+    border: 2px solid rgb(255, 255, 255);
+}
+
+#boton_reanudar{
+    /* Fondo del botón reanudar */
+    background-color: rgb(0, 92, 35);
+}
+
+#boton_reanudar:hover{
+    /* Si pasamos el ratón por encima, el color y el fondo cambian */
+    color: rgb(0, 92, 35);
+    background-color: rgb(137, 255, 182);
+}
+
+#boton_parar{
+    /* Fondo del botón parar */
+    background-color: rgb(145, 0, 0);
+}
+
+#boton_parar:hover{
+    /* Si pasamos el ratón por encima, el color y el fondo cambian */
+    color: rgb(145, 0, 0);
+    background-color: rgb(255, 137, 137);
+}
+
+/* NOTA: Al no especificarse este aspecto, he optado por dejar que los elementos vuelvan a su posición original una vez realizada la animación, para que no queden desordenados ni en las posiciones donde terminen */
+
+/* ----------------------------------------------- */
+/* Primera parte de la animación mediante keyframe */
+/* ----------------------------------------------- */
+@keyframes movimiento_taco {
+    6% { /* Al principio, se desplaza mientras rota para orientarse hacia la bola que va a golpear */
+        transform: translate(68px) rotate(2deg);
+    }
+
+    20% { /* Aplicamos una opacidad completa después de golpear y hasta que termina la animación, para que desaparezca */
+        opacity: 0.0;
+    }
+
+    100% {
+        opacity: 0.0;
+
+    }
+}
+
+#taco_billar { 
+    /* Animación del taco de billar */
+    animation-name: movimiento_taco;
+    animation-duration: 20s; /* 20 segundos de animación para que la misma tenga tiempo de mostrar todos los elementos correctamente */
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+
+}
+
+/* ----------------------------------------------- */
+/* Segunda parte de la animación mediante keyframe */
+/* ----------------------------------------------- */
+@keyframes movimiento_bola_blanca {
+    5% { /* La bola blanca se desplaza hacia la bola roja y rota un poco (para dar sensación de movimiento) */
+        transform: translate(70px) rotate(50deg);
+    }
+}
+
+#bola_blanca {
+    /* Animación de la bola blanca*/
+    animation-name: movimiento_bola_blanca;
+    animation-duration: 20s; 
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0.9s; /* Para cuadrar esta animación con la anterior, establecemos un retraso para el comienzo de la misma */
+    animation-fill-mode: forwards; /* Seleccionando forwards, la bola debería aplicar los valores y estilos que le aplique el último keyframe de la ejecución de la animación */
+
+}
+
+/* ----------------------------------------------- */
+/* Tercera parte de la animación mediante keyframe */
+/* ----------------------------------------------- */
+@keyframes aparicion_titulo {
+    10% { /* Aparece el título de la jugada, con las letras en rojo y el fondo en blanco, desplazándose hacia la izquierda */
+        color: rgb(0, 0, 0);
+        background-color: white;
+        transform: translateX(-65px);
+    }
+
+    15% { /* El título adopta el color rojo */
+        color: rgb(156, 0, 0);
+
+    }
+
+    50% { /* Mantenemos la visión del título */
+        opacity: 1;
+    }
+
+    55% { /* Vamos reduciendo la visión del título hasta que se funde con el fondo verde (ya que el color de fuente es el mismo) */
+        opacity: 0.0;
+    }
+
+    100% {
+        opacity: 0.0;
+    }
+
+}
+
+#titulo_jugada {
+    /* Animación del título de la jugada */
+    animation-name: aparicion_titulo;
+    animation-duration: 15s; /* Ajustamos una duración más reducida, para cuadrar con el resto de animaciones */
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 1.6s; /* Ajustamos un retraso de inicio superior, para cuadrar con el resto de animaciones */
+    animation-fill-mode: forwards;
+}
+
+/* ----------------------------------------------- */
+/* Cuarta parte de la animación mediante keyframe */
+/* ----------------------------------------------- */
+@keyframes movimiento_bola_cambiacolor {
+    6% { /* La bola se dirige hacia la banda derecha mientras rota y aumenta su tamaño */
+        transform: translate(63px, -40px) rotate(50deg) scale(1.5, 1.5);
+    }
+
+    9% { /* La bola se dirige hacia la banda superior mientras rota hacia el lado contrario y disminuye su tamaño */
+        transform: translate(-80px, -105px) rotate(-50deg) scale(0.5, 0.5);
+    }
+
+    15% { /* La bola cambia de color a azul */
+        background-color: rgb(0, 57, 156);
+        color: rgb(255, 255, 255);
+    }
+
+}
+
+#bola_cambiacolor {
+    /* Animación de la bola que cambia de color */
+    animation-name: movimiento_bola_cambiacolor;
+    animation-duration: 20s; /* Ajustamos una duración más reducida, para cuadrar con el resto de animaciones */
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 1.6s; /* Ajustamos un retraso de inicio superior, para cuadrar con el resto de animaciones */
+    animation-fill-mode: forwards;
+
+}
+
+/* ----------------------------------------------- */
+/* Quinta parte de la animación mediante keyframe */
+/* ----------------------------------------------- */
+@keyframes aparicion_publicidad {
+    0% { /* Aparece la imagen de publicidad */
+        background-image: url(/imagenes/campeonatoBillar.jpg);
+        background-size: cover;
+    }
+
+    100% { /* Se mantiene hasta el final de la animación */
+        background-image: url(/imagenes/campeonatoBillar.jpg);
+        background-size: cover;
+    }
+}
+
+#tapete_juego {
+    animation-name: aparicion_publicidad;
+    animation-duration: 16.5s; /* Ajustamos una duración más reducida, para cuadrar con el resto de animaciones */
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 3.4s; /* Ajustamos un retraso de inicio superior, para cuadrar con el resto de animaciones */
+}

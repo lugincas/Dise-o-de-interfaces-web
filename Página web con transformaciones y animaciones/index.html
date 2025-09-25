@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Luis Ginés Casanova de Utrilla</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" type="text/css" href="estilos/base.css"> <!-- Hoja de estilos base -->
+    <link rel="stylesheet" type="text/css" href="estilos/ejercicio_2.css"> <!-- Hoja de estilos ejercicio 2 -->
+    <link rel="stylesheet" type="text/css" href="estilos/ejercicio_3.css"> <!-- Hoja de estilos ejercicio 3 -->
+    <link rel="stylesheet" type="text/css" href="estilos/ejercicio_4.css"> <!-- Hoja de estilos ejercicio 4 -->
+
+</head>
+
+<body>
+    <div class="maqueta">
+
+        <header> <!-- Cabecera del documento -->
+            <img id="fotoPerfil" src="imagenes/fotoPerfil.jpg"
+                alt="Imagen de perfil de Luis Ginés Casanova de Utrilla" />
+            <h1 id="tituloNombre">Luis Ginés Casanova de Utrilla</h1>
+        </header>
+
+        <nav> <!-- Zona de navegación. Cada botón (enlace) pone el foco en la zona correspondiente -->
+            <a class="boton_navegacion" href="#foco_transformaciones" aria-label="Foco en la zona de transformaciones">Transformaciones</a>
+            <a class="boton_navegacion" href="#foco_transiciones" aria-label="Foco en la zona de transiciones">Transiciones</a>
+            <a class="boton_navegacion" href="#foco_animaciones_css" aria-label="Foco en la zona de animaciones CSS">Animaciones CSS</a>
+            <a class="boton_navegacion" href="#foco_animaciones_canvas" aria-label="Foco en la zona de animaciones Canvas">Animaciones Canvas</a>
+            <a class="boton_navegacion" href="#foco_animaciones_svg" aria-label="Foco en la zona de animaciones SVG">Animaciones SVG</a>
+        </nav>
+
+        <div class="transformaciones" id="foco_transformaciones" tabindex="-1"> <!-- Zona destinada a las transformaciones -->
+            <div class="opciones_transformaciones">
+                <!-- Botones para elegir tipo de transformación -->
+                <input type="button" value="Escalado" id="boton_escalado" /> 
+                <input type="button" value="Desplazamiento" id="boton_desplazamiento" />
+                <input type="button" value="Desplazamiento y rotación (del número)" id="boton_rotacion" />
+                <div id="contorno_bola"> <!-- Contorno de la bola de billar -->
+                    <div id="numero_bola"> <!-- Número de la bola de billar -->
+                        7
+                    </div>
+                </div>
+                <div id="texto_transformaciones"> <!-- Texto con el código -->
+                </div>
+            </div>
+        </div>
+
+        <div class="transiciones" id="foco_transiciones" tabindex="-1"> <!-- Zona destinada a las transiciones -->
+            <div class="lienzo_transicion"> <!-- div donde se produce la animación -->
+                <div class="bola_transicion"> <!-- Contorno de la bola de billar -->
+                    <div class="numero_bola_transicion"> <!-- Número de la bola de billar -->
+                        7
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="animaciones_css" id="foco_animaciones_css" tabindex="-1"> <!-- Zona destinada a las animaciones mediante CSS -->
+            <div id="tapete_juego">
+                <div id="titulo_jugada"> <!-- Título de la jugada -->
+                    CARAMBOLA
+                </div>
+                <div class="jugada"> <!-- Animación correspondiente a la jugada -->
+                    <div id="taco_billar"> <!-- Taco -->
+                    </div>
+                    <div class="bola_billar_css" id="bola_blanca"> <!-- Bola blanca y número -->
+                        7
+                    </div>
+                    <div class="bola_billar_css" id="bola_cambiacolor"> <!-- Bola con efectos y número -->
+                        2
+                    </div>
+                </div>
+            </div>
+            <div class="botones_animacion_css"> <!-- Botones para actuar sobre la animación -->
+                <input class="boton_animacion" id="boton_reanudar" type="button" value="Reanudar" />
+                <input class="boton_animacion" id="boton_parar" type="button" value="Parar" />
+            </div>
+        </div>
+
+        <div class="animaciones_canvas" id="foco_animaciones_canvas" tabindex="-1"> <!-- Zona destinada a la animación mediante canvas -->
+            <canvas id="mi_canvas" width="450" height="220">
+                Su navegador no soporta el elemento canvas.
+            </canvas>
+            <input class="boton_animacion" id="boton_iniciar" type="button" value="Iniciar animación" />
+        </div>
+
+        <div class="animaciones_svg" id="foco_animaciones_svg" tabindex="-1"> <!-- Zona destinada a la animación mediante etiquetas SVG -->
+            <svg id="dibujo_svg" width=450 height=220 xmlns="http://www.w3.org/2000/svg" version="1.1"> <!-- Iniciamos la etiqueta SVG, estableciendo las dimensiones del marco donde se producirá la animación -->
+                <rect width="450" height="220" rx="10" ry="10" style="fill:rgb(12, 103, 23);stroke:rgb(156, 0, 0);stroke-width:10;" /> <!-- Creamos la mesa de billar, ocupando el mismo espacio que indicamos para el marco, redondeando los bordes y con los mismos colores que hemos utilizado para las de los otros ejercicios -->
+                <path fill="none" stroke="#f4eb00" d="M215 60 C205 70 300 -30 365 90 h78" style="stroke-width:3;" stroke-dasharray="6,3,3,3" /> <!-- Linea que forma el camino que sigue la bola amarilla. Comienza con un trazo curvo que empieza en 215 60, teniéndo el primer punto de la curva en 205 70, el segundo en 300 -30 y el último en 365 90. El camino termina con un trazo recto horizontal (h78). -->
+                <text x=170 y=180 font-size="30" font-family="Monospace" fill="red" stroke="#f4eb00" stroke-width=0.9>¡Jugada maestra!</text> <!-- Texto utilizado para informar de la jugada, añadiendo el tamaño de la fuente y su color, así como el tamaño y el color del contorno. -->
+                <circle cx=60 cy=170 r=12 stroke="black" stroke-width=2 fill="rgb(217, 5, 5)"> <!-- Bola roja. Dentro implementamos su animación. -->
+                    <animateMotion id="animacion_bola_roja" begin="click" path="M0 0 32 -55" dur="0.5s" repeatCount="1" fill="freeze"></animateMotion> <!-- La animación de la bola roja comienza al hacer click y sigue un camino directo hacia la bola azul. Dura poco (0.5s) para que no vaya demasiado lenta. Ponemos como atributo fill="freeze" para que quede estática donde termine su animación y añadimos un identificador. -->
+                </circle> 
+                <circle cx=100 cy=90 r=12 stroke="black" stroke-width=2 fill="rgb(0, 38, 255)"> <!-- Bola azul. Dentro implementamos su animación. -->
+                    <animateMotion id="animacion_bola_azul" begin="animacion_bola_roja.end" path="M0 0 32 -73 290 20" dur="1s" repeatCount="1" fill="freeze"></animateMotion> <!-- La animación de la bola azul en cuanto termina la animación de la bola roja y sigue un camino que va en la dirección opuesta al golpe de la bola roja, para chocar contra la banda y acercarse a la bola amarilla. Ponemos como atributo fill="freeze" para que quede estática donde termine su animación y añadimos un identificador. -->
+                </circle>
+                <circle id="bola_amarilla" cx=200 cy=90 r=12 stroke="black" stroke-width=2 fill="rgb(249, 238, 19)"> <!-- Bola amarilla. Dentro implementamos su animación. -->
+                    <animateMotion id="animacion_1" begin="0s" path="M0 0 C100 -100 150 -10 150 20 h70 0" dur="3s" repeatCount="1" fill="freeze"></animateMotion> <!-- La animación de la bola amarilla comienza conforme se carga la página y sigue el camino que establecimos antes mediante la línea amarilla (los valores son ligeramente diferentes ya que están ajustados para que pase por debajo de dicha línea y no por encima). Ponemos como atributo fill="freeze" para que quede estática donde termine su animación y añadimos un identificador. -->
+                </circle>
+            </svg>
+        </div>
+
+        <footer> <!-- Pie de página con el autor de la misma -->
+            Creada por: Luis Ginés Casanova de Utrilla - Diseño de Interfaces Web (DAW)
+        </footer>
+    </div>
+
+    <!-- Archivos JS, colocados al final para que se cargen una vez cargado el resto del documento -->
+    <script src="archivos_js/ejercicio_3.js"></script> <!-- Inserción del archivo JS para los botones de reanudar/parar del ejercicio 3 -->
+    <script src="archivos_js/ejercicio_4.js"></script> <!-- Inserción del archivo JS para el ejercicio 4 -->
+</body>
+
+</html>
