@@ -1,0 +1,953 @@
+/* Para los tamaños y proporciones más concretos se han utilizado píxeles y 
+unidades relativas Element (em) mientras que para las más genéricas se han utilizado porcentajes */
+
+body {
+	/* Ajustes generales para el cuerpo del documento*/
+	min-width: 620px;
+	height: auto;
+	background-color: rgb(173, 253, 144);
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: justify;
+}
+
+a {
+	/* Ajustes generales para enlaces */
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* Zona de edición de los títulos de cada contenedor */
+#titulo {
+	color: rgb(5, 29, 0);
+	padding: 20px 100px;
+	border: 5px solid rgb(119, 113, 0);
+	border-radius: 10px;
+}
+
+.titulo_zona_actualidad {
+	grid-area: titulo;
+	text-align: center;
+	justify-content: center;
+	color: rgb(5, 29, 0);
+	background-color: rgb(173, 253, 144);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border: rgb(5, 29, 0) solid 2px;
+}
+
+.titulo_zona_secciones {
+	grid-area: titulo;
+	text-align: center;
+	justify-content: center;
+	color: rgb(5, 29, 0);
+	background-color: rgb(173, 253, 144);
+	margin-bottom: 5px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border: rgb(5, 29, 0) solid 2px;
+}
+
+.titulo_zona_opiniones {
+	grid-area: titulo;
+	text-align: center;
+	justify-content: center;
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 124, 165);
+	margin-bottom: 5px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.titulo_zona_formulario {
+	text-align: center;
+	justify-content: center;
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 124, 165);
+	margin-bottom: 5px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.titulo_zona_ventas {
+	text-align: center;
+	justify-content: center;
+	color: rgb(255, 255, 255);
+	margin-bottom: 5px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.titulo_bloque_navegacion {
+	text-align: center;
+	justify-content: center;
+	width: 100%;
+	color: rgb(5, 29, 0);
+	background-color: rgb(250, 237, 108);
+	margin-bottom: 5px;
+}
+
+.titulo_galeria {
+	text-align: center;
+	justify-content: center;
+	width: 100%;
+	color: rgb(5, 29, 0);
+	background-color: rgb(255, 255, 255);
+	margin-bottom: 5px;
+}
+
+.grid-layout { /* Grid para la maquetación principal */
+	display: grid;
+	grid-template-areas: 'encabezado encabezado'
+						'menu menu'
+						'main main'
+						'pie pie';
+	grid-template-rows: 5% 4% auto 8%; /* Tamaño de las filas distribuido por áreas */
+}
+
+
+/* Encabezado */
+header {
+	grid-area: encabezado;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 2px solid rgb(5, 29, 0);
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+}
+
+#imagenHeader { 
+	margin-left: 5px;
+	height: 150px; /* Altura de la imagen */
+	width: auto; /* Mantenemos el tamaño consistente con auto */
+	border-radius: 10px;
+}
+
+#imagenIcono {
+	height: 100px; /* Altura de la imagen */
+	width: auto; /* Mantenemos el tamaño consistente con auto */
+}
+
+#imagenMenuHamburguesa { /* Desactivamos la imagen del menú de hamburguesa puesto que sólo la utilizaremos en el diseño responsive */
+	display: none;
+}
+
+/* Menú de navegación*/
+nav {
+	grid-area: menu;
+	width: 100%;
+	margin: auto;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: rgb(5, 29, 0);
+	border-radius: 10px;
+}
+
+.primer_nivel { /* Primer nivel del menú de navegación*/
+	list-style-type: none;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 10px;
+}
+
+.primer_nivel>li>a { /* Enlaces del primer nivel*/
+	display: block;
+	padding: 15px 20px;
+	margin: 10px;
+	color: rgb(5, 29, 0);
+	text-decoration: none;
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+}
+
+.primer_nivel>li:hover { /* Efecto al pasar el ratón por encima de los enlaces */
+	background-color: rgb(173, 253, 144);
+	border-radius: 10px;
+
+}
+
+.primer_nivel>li>ul { /* Submenús del primer nivel */
+	display: none; 
+	position: absolute;
+	width: 200px;
+	background-color: rgb(254, 246, 160);
+	list-style-type: none;
+	border-radius: 10px;
+}
+
+.primer_nivel li:hover>ul { /* Submenús del primer nivel */
+	display: block;
+	border: 2px solid rgb(5, 29, 0);
+
+}
+
+.primer_nivel>li>ul>li:hover { /* Efecto al pasar el ratón por encima de los submenús*/
+	background-color: rgb(173, 253, 144);
+	border-left: 3px solid rgb(5, 29, 0);
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.primer_nivel>li>ul>li>a { /* Enlaces de los submenús */
+	display: block;
+	color: rgb(5, 29, 0);
+	padding: 15px 15px 15px 20px;
+	text-decoration: none;
+}
+
+main { /* Grid para la maquetación principal, que se encarga de la disposición de la zona de contenidos y la zona lateral */
+	grid-area: main;
+	display: grid;
+	grid-template-areas: 'noticias noticias lateral'
+		'secciones secciones galeria'
+		'opiniones opiniones galeria'
+		'formulario formulario galeria'
+		'venta venta galeria';
+	grid-template-columns: 39% 39% 22%;
+
+}
+
+.contenido_noticias { /* Grid para la maquetación de la zona de noticias */
+	grid-area: noticias;
+	display: grid;
+	grid-template-areas: 'titulo titulo'
+						'noticia_1 noticia_2';
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding: 10px;
+	background-color: rgb(255, 255, 255);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.noticia_1 { /* Maquetación de la primera noticia */
+	grid-area: noticia_1;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.noticia_2 { /* Maquetación de la segunda noticia */
+	grid-area: noticia_2;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;	
+}
+
+.noticia_1,.noticia_2{
+	padding: 2%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgb(173, 253, 144);
+	border: rgb(5, 29, 0) solid 3px;
+	margin: 5px;
+}
+
+
+.imagenes_noticia { /* Imagenes de la noticia */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+#imagen_noticia_1 { /* Estilo concreto para la primera imagen de la primera noticia */
+	height: auto;
+	width: 70%;
+	border: 2px solid rgb(0, 0, 0);
+	border-radius: 10px;
+
+}
+
+#imagen_noticia_2 { /* Estilo concreto para la segunda imagen de la primera noticia */
+	height: auto;
+	width: 30%;
+	border: 2px solid rgb(255, 187, 0);
+	border-radius: 10px;
+}
+
+#imagen_noticia_3 { /* Estilo concreto para la primera imagen de la segunda noticia */
+	height: auto;
+	width: 60%;
+	border: 2px solid rgb(0, 0, 0);
+	border-radius: 10px;
+}
+
+#imagen_noticia_4 { /* Estilo concreto para la segunda imagen de la segunda noticia */
+	height: auto;
+	width: 40%;
+	border: 2px solid rgb(255, 187, 0);
+	border-radius: 10px;
+	object-fit: cover;
+}
+
+.secciones { /* Grid para la maquetación de la zona de secciones */
+	grid-area: secciones;
+	display: grid;
+	grid-template-areas: 'titulo titulo titulo'
+		'seccion_1 seccion_2 seccion_3';
+	background-color: rgb(255, 255, 255);
+	padding: 10px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+/* Enlaces de las secciones y localización en el grid */
+.seccion_1>a { 
+	grid-area: seccion_1;
+}
+
+.seccion_2>a {
+	grid-area: seccion_2;
+}
+
+.seccion_3>a {
+	grid-area: seccion_3;
+}
+
+.seccion_1>a,
+.seccion_2>a,
+.seccion_3>a { /* Maquetación y estilo de las secciones */
+	height: 98%;
+	text-decoration: none;
+	color: black;
+	grid-area: seccion_2;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #ffffff;
+	border: 3px solid rgb(0, 0, 0);
+	border-radius: 10px;
+	margin: 6px;
+}
+
+.seccion_1>a:hover,
+.seccion_2>a:hover,
+.seccion_3>a:hover { /* Efecto al pasar el ratón por encima de las secciones */
+	background-color: #91fde0;
+	border: 3px solid rgb(0, 124, 165);
+	border-radius: 10px;
+}
+
+.imagen_secciones { /* Estilo para imágenes de las secciones */
+	height: 90%;
+	width: 100%;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	object-fit: cover;
+}
+
+.contenido_opiniones { /* Grid para la maquetación de la zona de opiniones */
+	grid-area: opiniones;
+	display: grid;
+	grid-template-areas: 'titulo titulo titulo'
+						'opinion_1 opinion_2 opinion_3';
+	background-color: rgb(0, 124, 165);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+
+}
+
+/* Localización de las opiniones en el grid */
+.opinion_1 { 
+	grid-area: opinion_1;
+}
+
+.opinion_2 {
+	grid-area: opinion_2;
+}
+
+.opinion_3 {
+	grid-area: opinion_3;
+}
+
+.opinion_1,
+.opinion_2,
+.opinion_3 { /* Estilo de las opiniones */
+	border-radius: 10px;
+	background-color: rgb(255, 255, 255);
+	border: 5px solid rgb(96, 215, 255);
+	margin: 5px;
+}
+
+.avatar_alias { /* Maquetación de la imagen de perfil y alias dentro de cada opinión*/
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin: 10px;
+}
+
+.avatar { /* Estilo del avatar*/
+	height: 100x;
+	width: 100px;
+	border-radius: 50px;
+	border: 2px solid rgb(96, 215, 255);
+}
+
+.alias { /* Estilo del alias */
+	margin: 10px;
+	color: rgb(0, 61, 146);
+}
+
+.idioma { /* Estilo del idioma */
+	margin-left: 10px;
+	color: rgb(0, 61, 146);
+	font-weight: bold;
+}
+
+.comentario { /* Estilo del comentario */
+	color: rgb(0, 0, 0);
+	background-color: rgb(177, 234, 253);
+	border-radius: 10px;
+	margin: 5px;
+	padding: 15px;
+}
+
+.fecha { /* Estilo de la fecha */
+	margin-left: 10px;
+	color: rgb(5, 29, 0);
+}
+
+.seccion_comentario { /* Estilo de la sección sobre la que se escribe el comentario */
+	margin-right: 10px;
+	float: right;
+	background-color: rgb(254, 254, 72);
+	border: 2px solid rgb(255, 255, 255);
+	border-radius: 10px;
+}
+
+.formulario { /* Maquetación de la sección de formulario para realizar comentarios */
+	grid-area: formulario;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(0, 124, 165);
+	color: white;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+/* Estilo y tamaños para elementos del formulario */
+
+legend { /* Estilo de la etiqueta de la sección de formulario */
+	padding: 10px;
+	background: rgb(255, 255, 255);
+	color: rgb(0, 124, 165);
+	border: 2px solid rgb(255, 255, 255);
+}
+
+.obligatorio:valid { /* Estilo cuando el campo es válido */
+	outline: solid 2px green;
+}
+
+.obligatorio:valid+.mensaje { /* Etiqueta span de clase mensaje que se oculta cuando el campo es válido */
+	visibility: hidden;
+	color: green;
+}
+
+
+.obligatorio:focus-visible,
+input:focus-visible,
+select:focus-visible,
+option:focus-visible { /* Estilo cuando se coge el foco en el formulario*/
+	outline: solid 4px rgb(2, 0, 150);
+}
+
+input {
+	width: 40%;
+}
+
+#nombre {
+	width: 20rem;
+}
+
+#correo {
+	width: 40rem;
+}
+
+#comentario {
+	width: 40rem;
+}
+
+#ingles,
+#frances,
+#espanol {
+	width: 3rem;
+}
+
+fieldset {
+	width: 60rem;
+}
+
+.botones {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	justify-content: center;
+	width: 60rem;
+	text-align: center;
+}
+
+.boton_enviar,
+.boton_cancelar {
+	color: rgb(0, 124, 165);
+	margin: 10px;
+	text-align: center;
+	font-weight: bold;
+
+}
+
+#atletismocheck,
+#baloncestocheck,
+#voleibolcheck {
+	margin: 1%;
+	width: 2%;
+}
+
+.enviar {
+	background-color: #52BE80;
+}
+
+.inicializar {
+	background-color: #E74C3C;
+}
+
+.boton:focus,
+.boton:hover {
+	color: white;
+	outline: solid 2px blue;
+}
+
+.venta { /* Estilo del contenedor para la sección de ventas */
+	grid-area: venta;
+	background-color: rgb(33, 108, 55);
+	border-radius: 10px;
+	margin: 5px;
+}
+
+.zona_tabla { /* Maquetación y estilo de la zona de la tabla */
+	background-color: rgb(255, 255, 255);
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin: 2%;
+	border-radius: 10px;
+}
+/* Estilo de la tabla de ventas y de todos sus componentes*/
+.tabla_ventas { 
+	width: 80%;
+	margin: 20px auto;
+	justify-content: center;
+	text-align: center;
+}
+
+/* Estilo de las cabeceras*/
+th { 
+	border: 1px solid rgb(0, 0, 0);
+	width: 7rem;
+}
+.tabla_ventas th { 
+	color: rgb(7, 27, 41);
+	background-color: rgb(177, 255, 186);
+}
+
+.tabla_ventas thead tr th {
+	background-color: rgb(255, 255, 255);
+}
+
+/* Estilo de las celdas*/
+td { 
+	text-align: center;
+	border: 1px solid rgb(0, 0, 0);
+}
+
+.tabla_ventas tfoot tr td {
+	color: rgb(7, 27, 41);
+	background-color: rgb(177, 255, 186);
+	font-weight: bold;
+
+}
+
+/* Estilo de cabeceras y celdas concretas de la tabla de ventas para mejorar la legibilidad */
+#atletismocolumna {
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 105, 218);
+	height: 30px;
+}
+
+#hombreatleta {
+	color: rgb(244, 244, 244);
+	background-color: rgb(24, 98, 176);
+
+}
+
+#mujeratleta {
+	color: rgb(255, 255, 255);
+	background-color: rgb(24, 98, 176);
+}
+
+#baloncestocolumna {
+	color: rgb(250, 237, 108);
+	background-color: rgb(149, 23, 221);
+	height: 30px;
+}
+
+#hombrebaloncesto {
+	color: rgb(250, 237, 108);
+	background-color: rgb(115, 25, 167);
+}
+
+#mujerbaloncesto {
+	color: rgb(250, 237, 108);
+	background-color: rgb(115, 25, 167);
+}
+
+#voleibolcolumna {
+	color: rgb(43, 15, 172);
+	background-color: rgb(22, 255, 185);
+	height: 30px;
+}
+
+#hombrevoleibol {
+	color: rgb(43, 15, 172);
+	background-color: rgb(112, 255, 212);
+}
+
+#mujervoleibol {
+	color: rgb(43, 15, 172);
+	background-color: rgb(112, 255, 212);
+}
+
+#ventas_totales {
+	color: rgb(73, 205, 88);
+	background-color: rgb(7, 27, 41);
+	height: 30px;
+}
+
+/* Maquetación y estilo de la zona lateral, comprendiendo el bloque de navegación y la galería de imágenes */
+.zonaLateral {
+	grid-area: lateral;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background-color: rgb(5, 29, 0);
+	border-radius: 10px;
+	margin: 5px;
+}
+
+.bloque_navegacion { /* Estilo de la sección de navegación lateral */
+	list-style-type: none;
+	width: 90%;
+	margin: 2%;
+	padding: 2%;
+}
+
+.bloque_navegacion li a { /* Estilo de cada elemento de la sección de navegación lateral */
+	display: block;
+	text-align: center;
+	color: rgb(5, 29, 0);
+	background-color: rgb(250, 237, 108);
+	margin: 2%;
+	padding: 8px 16px;
+	text-decoration: none;
+	border: rgb(255, 255, 255) solid 2px;
+	border-radius: 10px;
+}
+
+.bloque_navegacion li a:hover { /* Efectos al pasar el ratón por cada elemento de la sección de navegación lateral */
+	background-color: rgb(5, 29, 0);
+	color: white;
+	border: rgb(250, 237, 108) solid 2px;
+}
+
+.contenido_noticias:focus,
+.secciones:focus,
+.contenido_opiniones:focus,
+.formulario:focus,
+.venta:focus,
+.galeria:focus,
+footer:focus { /* Estilo que adoptan los contenedores cuando se coge el foco en la sección a la que nos redirige el usuario al hacer clic en algún elemento del bloque de navegación lateral */
+	border: 8px solid rgb(183, 0, 0);
+	opacity: 0.8;
+}
+
+.galeria { /* Estilo de la galería de imágenes */
+	grid-area: galeria;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background-color: rgb(255, 187, 0);
+	border: 5px solid rgb(59, 45, 65);
+	margin: 5px;
+	padding: 15px;
+}
+
+.marco_galeria { /* Marcos para separar las imágenes y su descripción entre sí */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 5px solid rgb(59, 45, 65);
+}
+
+.imagenes_galeria { /* Estilo de las imágenes de la galería */
+	height: auto;
+	width: 80%;
+	object-fit: cover;
+	border: 2px solid rgb(5, 29, 0);
+	border-radius: 10px;
+	margin: 10px;
+}
+
+.pie_de_foto { /* Estilo del pie de foto */
+	margin-bottom: 10px;
+}
+
+footer { /* Maquetación y estilo del pie de página */
+	grid-area: pie;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 10%;
+	padding-right: 10%;
+	text-align: center;
+	color: white;
+	background-color: rgb(34, 150, 1);
+}
+
+.redesSociales { /* Estilo del contenedor para las redes sociales */
+	display: inherit;
+	flex-direction: column;
+}
+ 
+.enlaceRrss { /* Estilo de los enlaces de las redes sociales */
+	text-decoration: none;
+}
+
+.iconosRrss { /* Estilo de los iconos de las RRSS */
+	height: 50px;
+	width: 50px;
+	padding: 0 12px;
+}
+
+.iconosRrss:hover {/* Cambio de opacidad y tamaño al pasar el ratón por encima de los iconos */
+	opacity: 0.8;
+	width: 45px;
+}
+
+.newsletter { /* Estilo del contenedor para el formulario de newsletter */
+	display: inherit;
+	align-items: inherit;
+	flex-direction: column;
+}
+
+@media screen and (max-width:620px) { /* Estilos para móviles y tablets (dispositivos menores de 620px). En este caso, desaparece la zona lateral y se centra el contenido en la página. Además, la sección de opiniones de usuarios se orienta verticalmente y cambia el fondo de la sección de ventas a morado*/
+
+	body {/* Ajustes generales para el cuerpo del documento*/	
+		width: auto;
+		margin: 0px;
+	}
+
+	.grid-layout {
+		display: grid;/* Posicionamos con grid y reducimos las áreas a utilizar */
+		grid-template-areas: 'encabezado' 
+							'menu'
+							'main'
+							'pie';
+		grid-template-columns: auto; /* Tamaño de la columna en auto */
+		
+		grid-template-rows: auto; /* Tamaño de la fila en auto */
+	}
+
+	#titulo { /* Ajuste de estilo para el título de la página */
+		padding: 20px;
+	}
+
+	.titulo_bloque_navegacion { /* Eliminamos el título de la sección de navegación lateral */
+		display: none;
+	}
+
+	.titulo_galeria { /* Eliminamos el título de la sección de galería de imágenes */
+		display: none;
+	}
+
+
+	/* Encabezado */
+	header { /* Ajustes de estilo diferentes para el encabezado */
+		width: auto;
+		justify-content: space-around;
+		align-items: center;
+		border-radius: 0px;
+		padding: 2%;
+	}
+
+	#imagenHeader { /* Eliminamos el escudo del palomares futbol club */
+		display: none;
+	}
+
+	#imagenIcono { /* Eliminamos la imagen de icono de login /*/
+		display: none;
+
+	}
+
+	#imagenMenuHamburguesa { /* Activamos la imagen de icono de hamburguesa */
+		display: inherit;
+		height: 100px;
+		width: 100px;
+	}
+
+	nav { /* Ajustes de estilo para el menú de navegación */
+		width: 100%;
+		background-color: rgb(5, 29, 0);
+		border-radius: 0px;
+	}
+
+	main { /* Ajustes de estilo para el contenido principal */
+		grid-area: main;
+		display: grid; /* Posicionamos con grid y reducimos las áreas a utilizar */
+		grid-template-areas: 'noticias'
+							'secciones'
+							'opiniones'
+							'formulario'
+							'venta';
+		grid-template-columns: auto; /* Tamaño de las columnas en auto*/
+	}
+
+	.contenido_opiniones { /* Ajustes de estilo para la sección de opiniones, la orientamos verticalmente */
+		grid-area: opiniones;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.avatar_alias { /* Ajustes de estilo para la imagen de perfil y alias, los orientamos verticalmente */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+	}
+
+	.formulario { /* Ajustes de estilo para la sección de formulario, la orientamos verticalmente */
+		grid-area: formulario;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	/* Se definen los tamaños de los elementos del formulario, esta vez en auto */
+	input {
+		width: auto;
+	}
+
+	#nombre {
+		width: auto;
+	}
+
+	#correo {
+		width: auto;
+	}
+
+	#comentario {
+		width: auto;
+	}
+
+	#ingles,
+	#frances,
+	#espanol {
+		width: auto;
+	}
+
+	fieldset {
+		width: auto;
+		margin: 5px;
+	}
+
+	.botones {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		justify-content: center;
+		width: auto;
+		text-align: center;
+	}
+
+	.venta { /* Estilo del contenedor para la sección de ventas, cambiamos el color del fondo */
+		grid-area: venta;
+		background-color: rgb(98, 33, 108);
+		border-radius: 10px;
+		margin: 5px;
+	}
+
+	/* Se ocultan las secciones laterales, comprendiendo el bloque de navegación y la galería de imágenes */
+	.zonaLateral {
+		display: none;
+	}
+
+	.bloque_navegacion {
+		display: none;
+	}
+
+	.bloque_navegacion li a {
+		display: none;
+	}
+
+	.bloque_navegacion li a:hover {
+		display: none;
+	}
+
+	.galeria {
+		display: none;
+	}
+
+	.marco_galeria {
+		display: none;
+	}
+
+	.pie_de_foto {
+		display: none;
+	}
+
+	.imagenes_galeria {
+		display: none;
+	}
+
+	/* Se ajustan los tamaños de los elementos del pie de página, esta vez en auto, y se oculta el formulario de newsletter */
+	footer {
+		width: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.redesSociales {
+		display: inherit;
+		flex-direction: column;
+	}
+
+	.newsletter {
+		display: none;
+	}
+}
